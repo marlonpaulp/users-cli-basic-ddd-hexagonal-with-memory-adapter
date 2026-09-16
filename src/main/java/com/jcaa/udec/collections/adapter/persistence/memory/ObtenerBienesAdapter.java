@@ -1,6 +1,7 @@
 package com.jcaa.udec.collections.adapter.persistence.memory;
 import com.jcaa.udec.collections.domain.core.model.Bien;
 import com.jcaa.udec.collections.domain.port.out.ObtenerBienesPort;
+import com.jcaa.udec.collections.domain.core.exception.BienNoExisteException;
 import java.util.List;
 import java.util.Objects;
 
@@ -19,6 +20,6 @@ public class ObtenerBienesAdapter implements ObtenerBienesPort {
                 return bien;
             }
         }
-        throw new RuntimeException("El bien no existe");
+        throw new BienNoExisteException();
     }
 }
